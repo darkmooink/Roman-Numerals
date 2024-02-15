@@ -7,5 +7,23 @@
 // M = 1000
 
 export function romanNumeral(number: number): string {
-  return "";
+  let output :string = ""
+  const valueTable = [new RomanConversion("V",5), new RomanConversion("I",1)]
+  valueTable.forEach((conversion)=>{
+
+    const numberOfThisLetter = Math.floor(number/conversion.decimal)
+    output = [conversion.roman.repeat(numberOfThisLetter), output].join("")
+    number = number-(numberOfThisLetter*conversion.decimal)
+  })
+  return output;
+}
+
+class RomanConversion {
+  roman: string
+  decimal: number
+
+  constructor(roman:string, decimal:number){
+    this.roman = roman
+    this.decimal = decimal
+  }
 }
