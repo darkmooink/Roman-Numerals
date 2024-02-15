@@ -8,37 +8,49 @@ import { romanNumeral } from "./Roman-Numerals";
 // M = 1000
 describe("Convert decimal numbers to Roman Numerals", () => {
   const testData = [
-    {in:1,out:"I"},
-    {in:5, out:"V"},
-    {in:10, out:"X"},
-    {in:50, out:"L"},
-    {in:100, out:"C"},
-    {in:500, out:"D"},
-    {in:1000, out:"M"},
-    {in:2,out:"II"},
-    {in:6, out:"VI"},
-    {in:11, out:"XI"},
-    {in:51, out:"LI"},
-    {in:101, out:"CI"},
-    {in:501, out:"DI"},
-    {in:1001, out:"MI"},
-    {in:16, out:"XVI"},
-    {in:56, out:"LVI"},
-    {in:106, out:"CVI"},
-    {in:506, out:"DVI"},
-    {in:1006, out:"MVI"},
-    {in:2666, out:"MMDCLXVI"},
-    {in:4, out:"IV"},
-    {in:9, out:"IX"},
-    {in:40, out:"XL"},
-    {in:90, out:"XC"},
-    {in:400, out:"CD"},
-    {in:900, out:"CM"},
+    {decimal:1,roman:"I"},
+    {decimal:5, roman:"V"},
+    {decimal:10, roman:"X"},
+    {decimal:50, roman:"L"},
+    {decimal:100, roman:"C"},
+    {decimal:500, roman:"D"},
+    {decimal:1000, roman:"M"},
+    {decimal:2,roman:"II"},
+    {decimal:6, roman:"VI"},
+    {decimal:11, roman:"XI"},
+    {decimal:51, roman:"LI"},
+    {decimal:101, roman:"CI"},
+    {decimal:501, roman:"DI"},
+    {decimal:1001, roman:"MI"},
+    {decimal:16, roman:"XVI"},
+    {decimal:56, roman:"LVI"},
+    {decimal:106, roman:"CVI"},
+    {decimal:506, roman:"DVI"},
+    {decimal:1006, roman:"MVI"},
+    {decimal:2666, roman:"MMDCLXVI"},
+    {decimal:4, roman:"IV"},
+    {decimal:9, roman:"IX"},
+    {decimal:40, roman:"XL"},
+    {decimal:90, roman:"XC"},
+    {decimal:400, roman:"CD"},
+    {decimal:900, roman:"CM"},
+    {decimal:39 , roman:"XXXIX"},
+    {decimal:246 , roman:"CCXLVI"},
+    {decimal:789 , roman:"DCCLXXXIX"},
+    {decimal:2421, roman:"MMCDXXI"},
+    {decimal:160 , roman:"CLX"},
+    {decimal:207 , roman:"CCVII"},
+    {decimal:1009 , roman:"MIX"},
+    {decimal:1066 , roman:"MLXVI"},
+    {decimal:1776 , roman:"MDCCLXXVI"},
+    {decimal:1918 , roman:"MCMXVIII"},
+    {decimal:1944 , roman:"MCMXLIV"},
+    {decimal:2024 , roman:"MMXXIV"},
 ]
-const dataInput = 0, dataOutput = 1
+const dataInput = 0, dataromanput = 1
   testData.forEach((data=>{
-    it(`The number ${data.in} should convert into ${data.out}`, () => {
-      expect(romanNumeral(data.in)).toBe(data.out);
+    it(`The number ${data.decimal} should convert into ${data.roman}`, () => {
+      expect(romanNumeral(data.decimal)).toBe(data.roman);
     });
   }))
 });
