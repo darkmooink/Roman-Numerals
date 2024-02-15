@@ -9,7 +9,12 @@ import { romanNumeral } from "./Roman-Numerals";
 describe("Convert decimal numbers to Roman Numerals", () => {
   const testData = [
     {in:1,out:"I"},
-    {in:5, out:"V"}
+    {in:5, out:"V"},
+    {in:10, out:"X"},
+    {in:50, out:"L"},
+    {in:100, out:"C"},
+    {in:500, out:"D"},
+    {in:1000, out:"M"},
 ]
 const dataInput = 0, dataOutput = 1
   testData.forEach((data=>{
