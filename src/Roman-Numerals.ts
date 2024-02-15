@@ -15,13 +15,17 @@ export function romanNumeral(number: number): string {
     new RomanConversion("L", 50), 
     new RomanConversion("X", 10),
     new RomanConversion("V",5), 
-    new RomanConversion("I",1)]
-  valueTable.forEach((conversion)=>{
+    new RomanConversion("I",1),];
 
-    const numberOfThisLetter = Math.floor(number/conversion.decimal)
-    output = [conversion.roman.repeat(numberOfThisLetter), output].join("")
-    number = number-(numberOfThisLetter*conversion.decimal)
-  })
+
+  valueTable.forEach((conversion)=>{
+    
+      const numberOfThisLetter = Math.floor(number/conversion.decimal)
+      output = [output, conversion.roman.repeat(numberOfThisLetter)].join("")
+      number = number-(numberOfThisLetter*conversion.decimal)
+    
+    }
+  )
   return output;
 }
 
