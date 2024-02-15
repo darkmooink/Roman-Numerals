@@ -6,8 +6,15 @@
 // D = 500
 // M = 1000
 
-export function romanNumeral(number: number): string {
-  let output :string = ""
+class RomanConversion {
+  roman: string;
+  decimal: number;
+
+  constructor(roman:string, decimal:number){
+    this.roman = roman;
+    this.decimal = decimal;
+  };
+};
   const valueTable = [
     new RomanConversion("M", 1000), 
     new RomanConversion("CM", 900), 
@@ -21,26 +28,32 @@ export function romanNumeral(number: number): string {
     new RomanConversion("IX", 9),
     new RomanConversion("V",5), 
     new RomanConversion("IV",4), 
-    new RomanConversion("I",1),];
+    new RomanConversion("I",1),
+  ];
+
+export function decimalToRoman(number: number): string {
+  let output :string = ""
 
 
   valueTable.forEach((conversion)=>{
     
-      const numberOfThisLetter = Math.floor(number/conversion.decimal)
-      output = [output, conversion.roman.repeat(numberOfThisLetter)].join("")
-      number = number-(numberOfThisLetter*conversion.decimal)
+      const numberOfThisLetter = Math.floor(number/conversion.decimal);
+      output = [output, conversion.roman.repeat(numberOfThisLetter)].join("");
+      number = number-(numberOfThisLetter*conversion.decimal);
     
     }
   )
   return output;
-}
+};
 
-class RomanConversion {
-  roman: string
-  decimal: number
 
-  constructor(roman:string, decimal:number){
-    this.roman = roman
-    this.decimal = decimal
-  }
+export function romanToDecimal(roman:string):number{
+  let total:number = 0
+  valueTable.forEach((conversion)=>{
+    while(roman.startsWith(conversion.roman)){
+      total += conversion.decimal
+      roman = roman.replace(conversion.roman,"")
+    }
+  })
+  return total;
 }
