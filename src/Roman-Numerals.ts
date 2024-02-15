@@ -10,11 +10,17 @@ export function romanNumeral(number: number): string {
   let output :string = ""
   const valueTable = [
     new RomanConversion("M", 1000), 
+    new RomanConversion("CM", 900), 
     new RomanConversion("D", 500), 
+    new RomanConversion("CD", 400), 
     new RomanConversion("C", 100), 
+    new RomanConversion("XC", 90), 
     new RomanConversion("L", 50), 
+    new RomanConversion("XL", 40), 
     new RomanConversion("X", 10),
+    new RomanConversion("IX", 9),
     new RomanConversion("V",5), 
+    new RomanConversion("IV",4), 
     new RomanConversion("I",1),];
 
 

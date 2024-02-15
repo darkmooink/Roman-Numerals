@@ -28,6 +28,12 @@ describe("Convert decimal numbers to Roman Numerals", () => {
     {in:506, out:"DVI"},
     {in:1006, out:"MVI"},
     {in:2666, out:"MMDCLXVI"},
+    {in:4, out:"IV"},
+    {in:9, out:"IX"},
+    {in:40, out:"XL"},
+    {in:90, out:"XC"},
+    {in:400, out:"CD"},
+    {in:900, out:"CM"},
 ]
 const dataInput = 0, dataOutput = 1
   testData.forEach((data=>{
